@@ -1,0 +1,626 @@
+/* Import fonts with variable weights for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap');
+
+/* CSS Reset and Base styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a1929;
+  background-image: url('./1.gif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #f0f0f0;
+  min-height: 100vh;
+  padding: 30px 20px;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container with improved glass morphism */
+.user-registration {
+    background-color: rgba(10, 25, 41, 0.7);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.3),
+      0 0 80px rgba(100, 255, 218, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+.user-registration:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.4),
+    0 0 100px rgba(100, 255, 218, 0.15);
+}
+
+/* Typography improvements */
+h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #64ffda;
+  margin-top: 0;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #101312, transparent);
+  border-radius: 3px;
+}
+
+/* Form styling enhancements */
+.registration-form {
+  margin-bottom: 50px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #b0bec5;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Input text color fix */
+/* Input text color fix with enhanced styling */
+input {
+    /* Modern input styling with improved visibility */
+    color: #1a1a1a !important;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(0, 200, 170, 0.4);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 100%;
+  }
+  
+  /* Enhanced focus state with visual feedback */
+  input:focus {
+    outline: none;
+    border-color: #00c8aa;
+    box-shadow: 
+      0 0 0 3px rgba(0, 200, 170, 0.2),
+      0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transform: translateY(-3px);
+    color: #000000 !important;
+  }
+  
+  /* Better placeholder styling with fade effect */
+  input::placeholder {
+    color: #aaaaaa;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+  
+  input:focus::placeholder {
+    opacity: 0.4;
+    transform: translateX(3px);
+  }
+  
+  /* Add validation success state */
+  input:valid:not(:placeholder-shown) {
+    border-color: rgba(0, 180, 150, 0.8);
+    background-color: rgba(240, 255, 250, 0.95);
+  }
+  
+  /* Add special styling for student number field */
+  input[name="studentNumber"],
+  input#studentNumber {
+    font-family: 'Consolas', monospace;
+    letter-spacing: 1px;
+  }
+  
+  /* Improve label styling */
+  label, 
+  .student-number-label, 
+  .first-name-label, 
+  .last-name-label {
+    color: #555555;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  /* Label interaction effect */
+  input:focus + label,
+  label:has(+ input:focus) {
+    color: #00a896;
+    transform: translateY(-1px);
+  }
+  
+  /* Improve the hint text visibility with better styling */
+  .hint-text, 
+  small {
+    color: #666666;
+    font-size: 13px;
+    margin-top: 6px;
+    display: block;
+    font-style: italic;
+    opacity: 0.8;
+  }
+  
+  /* Form group spacing for better visual hierarchy */
+  .form-group {
+    margin-bottom: 24px;
+    position: relative;
+  }
+  
+  /* Add subtle hover effect */
+  input:hover:not(:focus) {
+    border-color: rgba(0, 200, 170, 0.6);
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
+  }
+  
+  /* Add icon support for inputs */
+  .input-with-icon {
+    position: relative;
+  }
+  
+  .input-with-icon input {
+    padding-left: 40px;
+  }
+  
+  .input-with-icon::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  
+  .input-with-icon:focus-within::before {
+    opacity: 0.8;
+  }
+  
+  /* Student number specific */
+  .student-number-input::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2300c8aa'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 20l4-16m2 16l4-16M6 9h14M4 15h14'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  /* Autofill styles */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #1a1a1a;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 5000s ease-in-out 0s;
+    border-color: #00c8aa;
+  }
+  
+  /* Disable the iOS input styling */
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    input {
+      padding: 12px 14px;
+      font-size: 15px;
+    }
+    
+    input:focus {
+      transform: translateY(-2px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    input {
+      padding: 10px 12px;
+      font-size: 14px;
+      border-width: 1px;
+    }
+    
+    label {
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+  }
+  
+.form-group:hover small {
+  color: #000000;
+}
+
+/* Enhanced button styling */
+button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(90deg, #64ffda, #00bfa5);
+  color: #0a1929;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(90deg, #00bfa5, #64ffda);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(100, 255, 218, 0.4);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(100, 255, 218, 0.3);
+}
+
+button:disabled {
+  background: linear-gradient(90deg, #546e7a, #455a64);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Button ripple effect */
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(100, 100);
+    opacity: 0;
+  }
+}
+
+/* Improved message notifications */
+.message {
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  animation: slideIn 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.message::before {
+  content: '';
+  margin-right: 15px;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.message.success {
+  background-color: rgba(76, 175, 80, 0.15);
+  border-left: 4px solid #4caf50;
+  color: #a5d6a7;
+}
+
+.message.success::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234caf50'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+}
+
+.message.error {
+  background-color: rgba(244, 67, 54, 0.15);
+  border-left: 4px solid #f44336;
+  color: #ef9a9a;
+}
+
+.message.error::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f44336'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z'/%3E%3C/svg%3E");
+}
+
+/* Enhanced table styling */
+.registered-users-section {
+  margin-top: 50px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.data-table th,
+.data-table td {
+  padding: 18px 20px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #64ffda;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.data-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.data-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  transform: translateX(5px);
+}
+
+/* Add hover effect to table rows */
+.data-table td {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-table td::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(100, 255, 218, 0.3);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.data-table tr:hover td::after {
+  transform: translateX(0);
+}
+
+/* Loading state with animation */
+.loading {
+  text-align: center;
+  padding: 30px;
+  color: #b0bec5;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  border: 3px solid rgba(100, 255, 218, 0.3);
+  border-top: 3px solid #64ffda;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Debug information with better styling */
+.debug-info {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  border-left: 4px solid #ff9800;
+  position: relative;
+  overflow: hidden;
+}
+
+.debug-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff9800, transparent);
+}
+
+.debug-info h4 {
+  margin-top: 0;
+  color: #ff9800;
+  display: flex;
+  align-items: center;
+}
+
+.debug-info h4::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff9800'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.debug-info pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  color: #b0bec5;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 300px;
+  scrollbar-width: thin;
+  scrollbar-color: #64ffda rgba(255, 255, 255, 0.1);
+}
+
+.debug-info pre::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.debug-info pre::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.debug-info pre::-webkit-scrollbar-thumb {
+  background-color: #64ffda;
+  border-radius: 4px;
+}
+
+/* Enhanced animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Improved responsive styling */
+@media (max-width: 992px) {
+  .user-registration {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+  
+  .user-registration {
+    padding: 25px;
+    border-radius: 15px;
+  }
+  
+  button {
+    padding: 14px;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  
+  .message {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-registration {
+    padding: 20px 15px;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  input {
+    padding: 12px 15px;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+  
+  .debug-info pre {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .user-registration {
+    background-color: rgba(10, 25, 41, 0.8);
+  }
+}
